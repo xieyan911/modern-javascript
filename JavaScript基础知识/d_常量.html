@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常量</title>
+</head>
+<body>
+    <!-- 常量 -->
+    <!-- 
+        声明常数（不变）变量，可以使用 const 而非 let。
+        使用 const 声明的变量称为 "常量"，它们不能被修改，修改会抛出错误。
+        当程序员能确定这个变量永远不会改变的时候，就可以使用 const 来确保这种行为，并且清楚地向别人传递这一事实。
+    -->
+    <script>
+        const myBirthday = '08.09.1988';
+        myBirthday = '09.09.1988'; // Uncaught TypeError: Assignment to constant variable.
+    </script>
+
+    <!--
+        大写形式的常数
+        一个普遍的做法是将常量用作别名，以便记住那些在执行之前就已知的难以记住的值。
+        一般使用大写字母和下划线来命名这些常量。
+        例如：
+        我们声明一些常量颜色。
+    -->
+    <script>
+        const COLOR_RED = "#F00";
+        const COLOR_GREEN = "#0F0";
+        const COLOR_BLUE = "#00F";
+        let color = COLOR_RED;
+        alert(color)
+    </script>
+
+    <!--
+        常量什么时候使用大小命名？什么时候使用常规命名？
+        作为一个“常数”，意味着值永远不变。
+        有些常量在执行之前就已知了，比如上面颜色常量；
+        有些常量是在执行期间被“计算”出来的，但初始赋值后就不会改变了，这种常量在页面加载时是未知的，这样的采用常规命名。
+        例如：
+    -->
+    <script>
+        const divDom = document.querySelector("#id");
+    </script>
+    <!--
+        综上说明：大写的常量仅仅用作 “硬编码” 值的说明。
+    -->
+
+    <!--
+        变量命名的一些常用规则：
+        1. 使用易读的命名，如：userName，shoppingCart
+        2. 离诸如 a, b, c 这种缩写和短名称远一点，除非你真的知道你在干什么
+        3. 变量名在能够准确描述变量的同时，要足够简洁。不好的例子就是 data 和 value，这样的命名等于什么都没有说。
+           如果能够非常明显的从上下文知道数据和值所表达的含义，这样使用它们也是可以的。
+        4. 脑海中的术语要和团队一致。如果网站的访客称为“用户”，则我们采用相关的变量名称，比如：currentUser，或者 newUser，而不要使用 currentVisitor，或 newVisitor
+    -->
+</body>
+</html>

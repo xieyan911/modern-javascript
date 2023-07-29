@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代码结构</title>
+</head>
+<body>
+    <!-- 代码结构 -->
+    <!--
+        语句
+        语句是执行行为的语法结构和命令。
+        我们可以在代码中编写任意数量的语句，语句之间可以使用分号分割。
+        例如：我们将 "Hello World" 这条信息一分为二。
+     -->
+    <script>
+        alert("Hello"); alert("World");
+    </script>
+    <!--
+        通常，每条语句独占一行，以提高代码的可读性
+    -->
+    <script>
+        alert("Hello");
+        alert("World");
+    </script>
+
+
+    <!--
+        分号
+        当存在换行符时，大多数情况下可以省略分号。
+        例如：
+    -->
+    <script>
+        alert("Hello")
+        alert("World")
+    </script>
+    <!--
+        在这，JavaScript 将换行符理解为 “隐式” 的分号，这也被称为 自动分号插入。
+        https://tc39.es/ecma262/#sec-automatic-semicolon-insertion
+        大多数情况下，换行意味着一个分号，但是，“大多数情况下” 并不意味着 “总是”。
+        例如：
+    -->
+    <script>
+        alert(3 +
+        2
+        + 1);
+    </script>
+    <!--
+        代码输出结果为 6，因为JavaScript并没有在这里插入分号，显而易见的是，如果一行以加号 “+” 结尾，
+        那么这是一个 “不完整的表达式”，不需要分号。所以这个例子得到了预期的效果。
+        
+        存在 JavaScript 无法确定是否真的需要自动插入分号的情况。
+        这种情况发生的错误是很难被找到的。
+        如下：我们先看正确的代码，这段代码运行的结果是，先显示 "Hello World"，然后显示1，然后显示2
+    -->
+    <script>
+        alert("Hello World");
+        [1,2].forEach(alert);
+    </script>
+    <!--
+        我们删除上面代码的分号
+    -->
+    <script>
+        alert("Hello World")
+        [1, 2].forEach(alert)
+    </script>
+    <!--
+        上面这段代码，只有第一个 "Hello World" 被显示出来，数字没有显示出来，并且打开控制台会有报错。
+        这是因为，JavaScript 引擎并没有假设在 [...] 前有一个分号，因此上面的示例中，代码会被视为单个语句。
+        对于引擎来说，它是这样的：
+        alert("Hello World")[1, 2].forEach(alert)
+        所以，即使语句被换行符分隔了，我们依然建议在它们之间加分号。这个规则被社区广泛采用。
+    -->
+
+
+    <!--
+        注释
+        随着时间的推移，程序会变得越来越复杂，为代码添加注释来表述它做了什么和为什么这么做，变得非常有必要了。
+        你可以在脚步的任意地方添加注释，注释并不影响代码的执行，因为引擎会直接忽略它们。
+
+        单行注释以 两个正斜线字符 // 开始。
+        这一行剩余部分都是注释，它可能独占一行，或者跟随在一条语句的后面。
+        例如：
+    -->
+    <script>
+        // 这行注释独占一行
+        alert("Hello World");
+        alert("Hello World"); // 这行注释跟随在语句的后面
+    </script>
+    <!--
+        多行注释，以 "/*" 开始，并以 "*/" 结束
+        例如：
+    -->
+    <script>
+        /*
+            这个是一个多行注释
+            我可以注释多行的信息，这里面代码不能运行
+            alert("我不会被执行");
+        */
+        alert("Hello World");
+    </script>
+
+
+    <!--
+        注意
+        1. 不能在 /*...*/ 中嵌套另一个 /*...*/
+    -->
+</body>
+</html>

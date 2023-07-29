@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量</title>
+</head>
+<body>
+    <!-- 大多数情况下，JavaScript 应用需要处理信息。 -->
+    <!-- 
+        我们看两个例子： 
+        1. 一个网上商店，这里的信息可能包含正在售卖的商品和购物车
+        2. 一个聊天应用，这里的信息可能包含用户和消息等
+        变量就是用来存储这些信息的。
+    -->
+
+    <!--
+        变量
+        是数据的“命名存储”。我们可以使用变量存储商品信息，用户信息和消息信息。
+        在 JavaScript 中创建一个变量，我们需要用到 let 关键字。
+        例如：
+            我们创建（也可以称为 声明 或 定义）一个名为 “message” 的变量。
+            我们可以通过赋值运算符 = 为变量添加一些数据
+    -->
+    <script>
+        let message;
+        message = "Hello"; // 将字符串 'Hello' 保存到名为 message 的变量中
+    </script>
+    <!--
+        现在这个字符串已经保存到与该变量相关联的内存区域了，我们可以使用该变量名称访问它
+    -->
+    <script>
+        alert(message) // 显示变量内容
+    </script>
+    <!--
+        简洁一点，我们可以将变量定义与赋值合并一起使用
+    -->
+    <script>
+        let message1 = "World"
+        alert(message1)
+    </script>
+    <!--
+        也可以在一行中声明多个变量
+    -->
+    <script>
+        let name = "John", age = 25, job="Operator";
+    </script>
+    <!--
+        这样声明变量虽然长度更短，但并不推荐，为了更好地可读性，推荐一行声明一个变量。
+        推荐下面这样
+    -->
+    <script>
+        let name1 = "John";
+        let age1 = 25;
+        let job1 = "Operator";
+    </script>
+
+    <!--
+        变量命名规则：
+        1. 变量名称只能用 字母，数字，$ 和 _ 组成，可以单独使用 $ 和 _
+        2. 首字母必须是 非数字
+        3. 使用多个单词组成变量名时，推荐使用驼峰式
+        4. 变量名区分大小写，对大小写敏感
+        5. 允许使用非英文字母，但不推荐
+        6. 不能使用保留字 （保留字列表：https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#keywords）
+    -->
+</body>
+</html>
