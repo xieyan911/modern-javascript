@@ -30,8 +30,27 @@
     </script>
     <!--
         数字可以有很多操作，比如：加法(+)，减法(-)，乘法(*)，除法(/) 等。
-        除了常规的数字，还包括“特殊数值”: Infinity, -Infinity, NaN
+        除了常规的数字，还包括“特殊数值”: Infinity, -Infinity, NaN。
+
+        Infinity：代表 数学中的无穷大，是一个比任何数字都大的特殊值。
+        -Infinity：代表 数学中的无穷小，是一个比任何数字都小的特殊值。
+        NaN：代表一个错误计算，它是一个不正确的或者一个未定义的数学操作所得到的结果。
     -->
+    <script>
+        console.log("1 / 0 的结果是：", 1 / 0); // Infinity 无穷大，我们可以通过 除以 0 得到无穷大
+        console.log(Infinity); // Infinity 可以直接在代码中使用
+
+        console.log('"a" / s 的结果是：', "a" / 2); // NaN，这样的计算是错误的
+
+        // NaN 是粘性的，任何对 NaN 的进一步数学操作都会返回 NaN
+        console.log("NaN + 1 的结果是：", NaN + 1);
+        console.log("3 * NaN 的结果是：", 3 * NaN);
+
+        // 如果在数学表达式中有一个是NaN，会被传播到最终结果
+        console.log('"not a number" / 2 - 1 的结果是：', "not a number" / 2 - 1); 
+        // 只有一个例外，NaN ** 0 的结果是 1
+        console.log("NaN ** 0 的结果是：", NaN ** 0);
+    </script>
 
 </body>
 </html>
